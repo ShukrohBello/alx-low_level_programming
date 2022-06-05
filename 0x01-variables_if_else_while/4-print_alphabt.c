@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 
 /**
 * main - Entry function
@@ -13,7 +13,7 @@ int main(void)
 
 	for (alpha = 'a'; alpha <= 'z'; alpha++)
 	{
-		if (alpha != 'q' && alpha != 'e')
+		if (alpha != 'e' && alpha != 'q')
 		{
 			putchar(alpha);
 		}
