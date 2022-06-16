@@ -1,26 +1,26 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * leet - convert string to leet speak
- * @c: string to convert
- * Description: replaces a, e, o, and t with 4, 3, 0, 7, and 1 respectively
- * Return: string c
- **/
-char *leet(char *c)
+ * leet - Encodes a string to 1337.
+ * @str: The string to be encoded.
+ *
+ * Return: A pointer to the encoded string.
+ */
+char *leet(char *str)
 {
-	int i;
-	int j;
-	char *replace;
+	int indx1 = 0, indx2;
+	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
-	replace = "aAeEoOtTlL4433007711";
-
-	for (i = 0; c[i] != '\0'; i++)
+	while (str[indx1])
 	{
-		for (j = 0; j <= 9; j++)
+		for (indx2 = 0; indx2 <= 7; indx2++)
 		{
-			if (c[i] == replace[j])
-				c[i] = replace[j + 10];
+			if (str[indx1] == leet[indx2] ||
+			    str[indx1] - 32 == leet[indx2])
+				str[indx1] = indx2 + '0';
 		}
+
+		indx1++;
 	}
-	return (c);
+	return (str);
 }
